@@ -37,6 +37,8 @@ void SpatterGenerator::build(Params& params)
 
     out = new Output("SpatterGenerator[@p:@l]: ", verbose, 0, Output::STDOUT);
 
+    numIssuedReqs = 0;
+
     datawidth  = params.find<uint32_t>("datawidth", 8);
 
     patternIdx = 0;
@@ -116,6 +118,8 @@ void SpatterGenerator::build(Params& params)
     } else {
         out->verbose(CALL_INFO, 0, 0, "Warning: source and target arrays will overlap.\n");
     }
+
+    config = cl.configs[configIdx].get();
 }
 
 SpatterGenerator::~SpatterGenerator()
@@ -126,7 +130,7 @@ SpatterGenerator::~SpatterGenerator()
 void SpatterGenerator::generate(MirandaRequestQueue<GeneratorRequest*>* q)
 {
     if (!configFin) {
-        const Spatter::ConfigurationBase *config = cl.configs[configIdx].get();
+        config = cl.configs[configIdx].get();
         queue = q;
 
         if (0 == config->kernel.compare("gather")) {
@@ -149,23 +153,11 @@ void SpatterGenerator::generate(MirandaRequestQueue<GeneratorRequest*>* q)
 
 bool SpatterGenerator::isFinished()
 {
-    if (configFin) {
-        const Spatter::ConfigurationBase *prevConfig = cl.configs[configIdx-1].get();
-        uint64_t expectedCount = getPatternSize(prevConfig) * prevConfig->count;
-        uint64_t recordedCount = statCompletedReqs->getCollectionCount();
-
-        assert(recordedCount);
-
-        if (0 == prevConfig->kernel.compare("gs")) {
-            // GS patterns expect twice the number of bytes.
-            expectedCount <<= 1;
-        }
-
-        if (recordedCount == expectedCount) {
-            // The requests associated with the previous run have completed.
-            performGlobalStatisticOutput();
-            configFin = false;
-        }
+    if (configFin && numIssuedReqs == statCompletedReqs->getCollectionCount()) {
+        // The requests associated with the previous run have completed.
+        performGlobalStatisticOutput();
+        numIssuedReqs = 0;
+        configFin = false;
     }
 
     return (configIdx == cl.configs.size());
@@ -260,7 +252,6 @@ size_t SpatterGenerator::getPatternSize(const Spatter::ConfigurationBase *config
    */
 void SpatterGenerator::updateIndices()
 {
-    const Spatter::ConfigurationBase *config = cl.configs[configIdx].get();
     size_t patternSize = getPatternSize(config);
 
     if (patternIdx == (patternSize - 1)) {
@@ -285,13 +276,13 @@ void SpatterGenerator::updateIndices()
    */
 void SpatterGenerator::gather()
 {
-    const Spatter::ConfigurationBase *config = cl.configs[configIdx].get();
-
     uint64_t sourceOffset = config->pattern[patternIdx] + config->delta * countIdx;
     uint64_t sourceAddr = startSource + sourceOffset;
 
     out->verbose(CALL_INFO, 8, 0, "Issuing READ request for address %" PRIu64 "\n", sourceAddr);
     queue->push_back(new MemoryOpRequest(sourceAddr, datawidth, READ));
+
+    ++numIssuedReqs;
 }
 
 /**
@@ -300,13 +291,13 @@ void SpatterGenerator::gather()
    */
 void SpatterGenerator::scatter()
 {
-    const Spatter::ConfigurationBase *config = cl.configs[configIdx].get();
-
     uint64_t targetOffset = config->pattern[patternIdx] + config->delta * countIdx;
-    uint64_t targetAddr = startTarget + targetOffset;
+    uint64_t targetAddr = startSource + targetOffset;
 
     out->verbose(CALL_INFO, 8, 0, "Issuing WRITE request for address %" PRIu64 "\n", targetAddr);
     queue->push_back(new MemoryOpRequest(targetAddr, datawidth, WRITE));
+
+    ++numIssuedReqs;
 }
 
 /**
@@ -315,8 +306,6 @@ void SpatterGenerator::scatter()
    */
 void SpatterGenerator::gatherScatter()
 {
-    const Spatter::ConfigurationBase *config = cl.configs[configIdx].get();
-
     uint64_t sourceOffset = config->pattern_gather[patternIdx] + config->delta_gather * countIdx;
     uint64_t sourceAddr = startSource + sourceOffset;
 
@@ -333,6 +322,8 @@ void SpatterGenerator::gatherScatter()
 
     out->verbose(CALL_INFO, 8, 0, "Issuing WRITE request for address %" PRIu64 "\n", targetAddr);
     queue->push_back(writeReq);
+
+    numIssuedReqs += 2;
 }
 
 /**
@@ -341,13 +332,13 @@ void SpatterGenerator::gatherScatter()
    */
 void SpatterGenerator::multiGather()
 {
-    const Spatter::ConfigurationBase *config = cl.configs[configIdx].get();
-
-    uint64_t sourceOffset = config->pattern[config->pattern_gather[patternIdx]] + config->delta * countIdx;
+    uint64_t sourceOffset = config->pattern[config->pattern_gather[patternIdx]] + config->delta_gather * countIdx;
     uint64_t sourceAddr = startSource + sourceOffset;
 
     out->verbose(CALL_INFO, 8, 0, "Issuing READ request for address %" PRIu64 "\n", sourceAddr);
     queue->push_back(new MemoryOpRequest(sourceAddr, datawidth, READ));
+
+    ++numIssuedReqs;
 }
 
 /**
@@ -356,11 +347,11 @@ void SpatterGenerator::multiGather()
    */
 void SpatterGenerator::multiScatter()
 {
-    const Spatter::ConfigurationBase *config = cl.configs[configIdx].get();
-
-    uint64_t targetOffset = config->pattern[config->pattern_scatter[patternIdx]] + config->delta * countIdx;
-    uint64_t targetAddr = startTarget + targetOffset;
+    uint64_t targetOffset = config->pattern[config->pattern_scatter[patternIdx]] + config->delta_scatter * countIdx;
+    uint64_t targetAddr = startSource + targetOffset;
 
     out->verbose(CALL_INFO, 8, 0, "Issuing WRITE request for address %" PRIu64 "\n", targetAddr);
     queue->push_back(new MemoryOpRequest(targetAddr, datawidth, WRITE));
+
+    ++numIssuedReqs;
 }

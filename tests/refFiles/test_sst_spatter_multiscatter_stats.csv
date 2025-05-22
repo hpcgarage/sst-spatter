@@ -104,7 +104,7 @@ l1cache, eventSent_CustomReq, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, eventSent_CustomResp, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, eventSent_CustomAck, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, EventStalledForLockedCacheline, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
-l1cache, evict_I, , Accumulator, 857538500, 0, 512, 512, 512, 1, 1
+l1cache, evict_I, , Accumulator, 857538500, 0, 511, 511, 511, 1, 1
 l1cache, evict_S, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, evict_M, , Accumulator, 857538500, 0, 7682, 7682, 7682, 1, 1
 l1cache, evict_IS, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
@@ -287,7 +287,7 @@ l1cache, eventSent_CustomReq, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, eventSent_CustomResp, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, eventSent_CustomAck, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, EventStalledForLockedCacheline, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
-l1cache, evict_I, , Accumulator, 857538500, 0, 512, 512, 512, 1, 1
+l1cache, evict_I, , Accumulator, 857538500, 0, 511, 511, 511, 1, 1
 l1cache, evict_S, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
 l1cache, evict_M, , Accumulator, 857538500, 0, 7682, 7682, 7682, 1, 1
 l1cache, evict_IS, , Accumulator, 857538500, 0, 0, 0, 0, 0, 0
