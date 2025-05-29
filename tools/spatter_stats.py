@@ -17,7 +17,6 @@ def load_data(filename: str) -> pd.DataFrame:
 
 def print_stats(df: pd.DataFrame):
     config = 0
-    bytes = 0
     prev_time = 0.0
 
     print(f"{'config':<15}{'bytes':<15}{'time(s)':<15}{'bw(MB/s)':<15}{'cycles':<15}")
@@ -26,8 +25,8 @@ def print_stats(df: pd.DataFrame):
         stat_name = row.StatisticName.strip()
         stat_value = row._asdict()['_7']
 
-        if stat_name in ['total_bytes_read', 'total_bytes_write']:
-            bytes += stat_value
+        if stat_name == 'total_bytes_write':
+            bytes = stat_value
 
         elif stat_name == 'cycles':
             curr_time = row.SimTime / 1e+12
@@ -39,7 +38,6 @@ def print_stats(df: pd.DataFrame):
             print(f"{config:<15}{bytes:<15}{time:<15g}{bw:<15.2f}{cycles:<15}")
 
             config += 1
-            bytes = 0
             prev_time = curr_time
 
 if __name__ == '__main__':
