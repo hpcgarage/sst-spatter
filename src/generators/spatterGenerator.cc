@@ -276,13 +276,21 @@ void SpatterGenerator::updateIndices()
    */
 void SpatterGenerator::gather()
 {
-    uint64_t sourceOffset = config->pattern[patternIdx] + config->delta * countIdx;
-    uint64_t sourceAddr = startSource + sourceOffset;
+    sourceAddr = startSource + config->pattern[patternIdx] + config->delta * countIdx;
+    targetAddr = startTarget + config->pattern.size() * (countIdx % config->wrap);
+
+    MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
+    MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
+
+    writeReq->addDependency(readReq->getRequestID());
 
     out->verbose(CALL_INFO, 8, 0, "Issuing READ request for address %" PRIu64 "\n", sourceAddr);
-    queue->push_back(new MemoryOpRequest(sourceAddr, datawidth, READ));
+    queue->push_back(readReq);
 
-    ++numIssuedReqs;
+    out->verbose(CALL_INFO, 8, 0, "Issuing WRITE request for address %" PRIu64 "\n", targetAddr);
+    queue->push_back(writeReq);
+
+    numIssuedReqs += 2;
 }
 
 /**
@@ -291,13 +299,21 @@ void SpatterGenerator::gather()
    */
 void SpatterGenerator::scatter()
 {
-    uint64_t targetOffset = config->pattern[patternIdx] + config->delta * countIdx;
-    uint64_t targetAddr = startSource + targetOffset;
+    sourceAddr = startTarget + config->pattern.size() * (countIdx % config->wrap);
+    targetAddr = startSource + config->pattern[patternIdx] + config->delta * countIdx;
+
+    MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
+    MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
+
+    writeReq->addDependency(readReq->getRequestID());
+
+    out->verbose(CALL_INFO, 8, 0, "Issuing READ request for address %" PRIu64 "\n", sourceAddr);
+    queue->push_back(readReq);
 
     out->verbose(CALL_INFO, 8, 0, "Issuing WRITE request for address %" PRIu64 "\n", targetAddr);
-    queue->push_back(new MemoryOpRequest(targetAddr, datawidth, WRITE));
+    queue->push_back(writeReq);
 
-    ++numIssuedReqs;
+    numIssuedReqs += 2;
 }
 
 /**
@@ -306,11 +322,8 @@ void SpatterGenerator::scatter()
    */
 void SpatterGenerator::gatherScatter()
 {
-    uint64_t sourceOffset = config->pattern_gather[patternIdx] + config->delta_gather * countIdx;
-    uint64_t sourceAddr = startSource + sourceOffset;
-
-    uint64_t targetOffset = config->pattern_scatter[patternIdx] + config->delta_scatter * countIdx;
-    uint64_t targetAddr = startTarget + targetOffset;
+    sourceAddr = startSource + config->pattern_gather[patternIdx] + config->delta_gather * countIdx;
+    targetAddr = startTarget + config->pattern_scatter[patternIdx] + config->delta_scatter * countIdx;
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
     MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
@@ -332,13 +345,21 @@ void SpatterGenerator::gatherScatter()
    */
 void SpatterGenerator::multiGather()
 {
-    uint64_t sourceOffset = config->pattern[config->pattern_gather[patternIdx]] + config->delta_gather * countIdx;
-    uint64_t sourceAddr = startSource + sourceOffset;
+    sourceAddr = startSource + config->pattern[config->pattern_gather[patternIdx]] + config->delta_gather * countIdx;
+    targetAddr = startTarget + config->pattern_gather.size() * (countIdx % config->wrap);
+
+    MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
+    MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
+
+    writeReq->addDependency(readReq->getRequestID());
 
     out->verbose(CALL_INFO, 8, 0, "Issuing READ request for address %" PRIu64 "\n", sourceAddr);
-    queue->push_back(new MemoryOpRequest(sourceAddr, datawidth, READ));
+    queue->push_back(readReq);
 
-    ++numIssuedReqs;
+    out->verbose(CALL_INFO, 8, 0, "Issuing WRITE request for address %" PRIu64 "\n", targetAddr);
+    queue->push_back(writeReq);
+
+    numIssuedReqs += 2;
 }
 
 /**
@@ -347,11 +368,19 @@ void SpatterGenerator::multiGather()
    */
 void SpatterGenerator::multiScatter()
 {
-    uint64_t targetOffset = config->pattern[config->pattern_scatter[patternIdx]] + config->delta_scatter * countIdx;
-    uint64_t targetAddr = startSource + targetOffset;
+    sourceAddr = startTarget + config->pattern_scatter.size() * (countIdx % config->wrap);
+    targetAddr = startSource + config->pattern[config->pattern_scatter[patternIdx]] + config->delta_scatter * countIdx;
+
+    MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
+    MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
+
+    writeReq->addDependency(readReq->getRequestID());
+
+    out->verbose(CALL_INFO, 8, 0, "Issuing READ request for address %" PRIu64 "\n", sourceAddr);
+    queue->push_back(readReq);
 
     out->verbose(CALL_INFO, 8, 0, "Issuing WRITE request for address %" PRIu64 "\n", targetAddr);
-    queue->push_back(new MemoryOpRequest(targetAddr, datawidth, WRITE));
+    queue->push_back(writeReq);
 
-    ++numIssuedReqs;
+    numIssuedReqs += 2;
 }

@@ -69,6 +69,8 @@ private:
     void multiScatter();
 
     uint64_t numIssuedReqs;
+    uint64_t sourceAddr;
+    uint64_t targetAddr;
     uint32_t datawidth;
     uint32_t startSource;
     uint32_t startTarget;
