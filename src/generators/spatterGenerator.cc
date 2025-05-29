@@ -38,53 +38,17 @@ void SpatterGenerator::build(Params& params)
     out = new Output("SpatterGenerator[@p:@l]: ", verbose, 0, Output::STDOUT);
 
     numIssuedReqs = 0;
+    sourceAddr = 0;
+    targetAddr = 0;
 
     datawidth  = params.find<uint32_t>("datawidth", 8);
-
     patternIdx = 0;
     countIdx   = 0;
     configIdx  = 0;
 
     configFin = false;
 
-    statReqs[READ]            = registerStatistic<uint64_t>("read_reqs");
-    statReqs[WRITE]           = registerStatistic<uint64_t>("write_reqs");
-    statReqs[CUSTOM]          = registerStatistic<uint64_t>("custom_reqs");
-    statSplitReqs[READ]       = registerStatistic<uint64_t>("split_read_reqs");
-    statSplitReqs[WRITE]      = registerStatistic<uint64_t>("split_write_reqs");
-    statSplitReqs[CUSTOM]     = registerStatistic<uint64_t>("split_custom_reqs");
-    statCompletedReqs         = registerStatistic<uint64_t>("completed_reqs");
-    statCyclesWithIssue       = registerStatistic<uint64_t>("cycles_with_issue");
-    statCyclesWithoutIssue    = registerStatistic<uint64_t>("cycles_no_issue");
-    statBytes[READ]           = registerStatistic<uint64_t>("total_bytes_read");
-    statBytes[WRITE]          = registerStatistic<uint64_t>("total_bytes_write");
-    statBytes[CUSTOM]         = registerStatistic<uint64_t>("total_bytes_custom");
-    statReqLatency            = registerStatistic<uint64_t>("req_latency");
-    statTime                  = registerStatistic<uint64_t>("time");
-    statCyclesHitFence        = registerStatistic<uint64_t>("cycles_hit_fence");
-    statMaxIssuePerCycle      = registerStatistic<uint64_t>("cycles_max_issue");
-    statCyclesHitReorderLimit = registerStatistic<uint64_t>("cycles_max_reorder");
-    statCycles                = registerStatistic<uint64_t>("cycles");
-
-    // Set the Clear Data On Output and Output At End Of Sim flags.
-    setStatFlags(statReqs[READ]);
-    setStatFlags(statReqs[WRITE]);
-    setStatFlags(statReqs[CUSTOM]);
-    setStatFlags(statSplitReqs[READ]);
-    setStatFlags(statSplitReqs[WRITE]);
-    setStatFlags(statSplitReqs[CUSTOM]);
-    setStatFlags(statCompletedReqs);
-    setStatFlags(statCyclesWithIssue);
-    setStatFlags(statCyclesWithoutIssue);
-    setStatFlags(statBytes[READ]);
-    setStatFlags(statBytes[WRITE]);
-    setStatFlags(statBytes[CUSTOM]);
-    setStatFlags(statReqLatency);
-    setStatFlags(statTime);
-    setStatFlags(statCyclesHitFence);
-    setStatFlags(statMaxIssuePerCycle);
-    setStatFlags(statCyclesHitReorderLimit);
-    setStatFlags(statCycles);
+    initStatistics();
 
     // Convert the arguments to a compatible format before parsing them.
     countArgs(args, argc);
@@ -165,6 +129,52 @@ bool SpatterGenerator::isFinished()
 
 void SpatterGenerator::completed()
 {
+}
+
+/**
+   * @brief Initialize the Miranda CPU statistics.
+   *
+   */
+void SpatterGenerator::initStatistics()
+{
+    statReqs[READ]            = registerStatistic<uint64_t>("read_reqs");
+    statReqs[WRITE]           = registerStatistic<uint64_t>("write_reqs");
+    statReqs[CUSTOM]          = registerStatistic<uint64_t>("custom_reqs");
+    statSplitReqs[READ]       = registerStatistic<uint64_t>("split_read_reqs");
+    statSplitReqs[WRITE]      = registerStatistic<uint64_t>("split_write_reqs");
+    statSplitReqs[CUSTOM]     = registerStatistic<uint64_t>("split_custom_reqs");
+    statCompletedReqs         = registerStatistic<uint64_t>("completed_reqs");
+    statCyclesWithIssue       = registerStatistic<uint64_t>("cycles_with_issue");
+    statCyclesWithoutIssue    = registerStatistic<uint64_t>("cycles_no_issue");
+    statBytes[READ]           = registerStatistic<uint64_t>("total_bytes_read");
+    statBytes[WRITE]          = registerStatistic<uint64_t>("total_bytes_write");
+    statBytes[CUSTOM]         = registerStatistic<uint64_t>("total_bytes_custom");
+    statReqLatency            = registerStatistic<uint64_t>("req_latency");
+    statTime                  = registerStatistic<uint64_t>("time");
+    statCyclesHitFence        = registerStatistic<uint64_t>("cycles_hit_fence");
+    statMaxIssuePerCycle      = registerStatistic<uint64_t>("cycles_max_issue");
+    statCyclesHitReorderLimit = registerStatistic<uint64_t>("cycles_max_reorder");
+    statCycles                = registerStatistic<uint64_t>("cycles");
+
+    // Set the Clear Data On Output and Output At End Of Sim flags.
+    setStatFlags(statReqs[READ]);
+    setStatFlags(statReqs[WRITE]);
+    setStatFlags(statReqs[CUSTOM]);
+    setStatFlags(statSplitReqs[READ]);
+    setStatFlags(statSplitReqs[WRITE]);
+    setStatFlags(statSplitReqs[CUSTOM]);
+    setStatFlags(statCompletedReqs);
+    setStatFlags(statCyclesWithIssue);
+    setStatFlags(statCyclesWithoutIssue);
+    setStatFlags(statBytes[READ]);
+    setStatFlags(statBytes[WRITE]);
+    setStatFlags(statBytes[CUSTOM]);
+    setStatFlags(statReqLatency);
+    setStatFlags(statTime);
+    setStatFlags(statCyclesHitFence);
+    setStatFlags(statMaxIssuePerCycle);
+    setStatFlags(statCyclesHitReorderLimit);
+    setStatFlags(statCycles);
 }
 
 /**
