@@ -41,16 +41,16 @@ def print_stats(stats_data: pd.DataFrame, kernel_data: list[str]):
         stat_value = row._asdict()['_7']
 
         if stat_name == 'total_bytes_write':
-            bytes = (stat_value * 2) if kernel_data[config] == 'gs' else stat_value
+            byteCount = (stat_value * 2) if kernel_data[config] == 'gs' else stat_value
 
         elif stat_name == 'cycles':
             curr_time = row.SimTime / 1e+12
 
             time = curr_time - prev_time
-            bw = ((bytes / 1.0e+06) / time) if (time > 0) else 0.0
+            bw = ((byteCount / 1.0e+06) / time) if (time > 0) else 0.0
             cycles = stat_value
 
-            print(f"{config:<15}{bytes:<15}{time:<15g}{bw:<15.2f}{cycles:<15}")
+            print(f"{config:<15}{byteCount:<15}{time:<15g}{bw:<15.2f}{cycles:<15}")
 
             config += 1
             prev_time = curr_time
