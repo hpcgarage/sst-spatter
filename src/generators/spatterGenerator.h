@@ -58,6 +58,7 @@ private:
     void countArgs(const std::string &args, int32_t &argc);
     void tokenizeArgs(const std::string &args, const int32_t &argc, char ***argv);
     void setStatFlags(Statistic<uint64_t>* stat);
+    void initStatistics();
     void updateIndices();
 
     size_t getPatternSize(const Spatter::ConfigurationBase *config);
@@ -68,6 +69,9 @@ private:
     void multiGather();
     void multiScatter();
 
+    uint64_t numIssuedReqs;
+    uint64_t sourceAddr;
+    uint64_t targetAddr;
     uint32_t datawidth;
     uint32_t startSource;
     uint32_t startTarget;
@@ -96,6 +100,7 @@ private:
     Output* out;
 
     Spatter::ClArgs cl;
+    Spatter::ConfigurationBase *config;
 };
 
 }

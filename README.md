@@ -92,7 +92,7 @@ cpu, cycles, , Accumulator, 737561682, 0, 2578887, 2578887, 2578887, 1, 1
 To compare this output with Spatter runs, you can use the [spatter_stats.py](tools/spatter_stats.py) helper script to convert the data in the statistics file into Spatter-like statistics.
 
 ```
-python3 tools/spatter_stats.py stats.csv
+python3 tools/spatter_stats.py stats.csv trace.json
 
 config         bytes          time(s)        bw(MB/s)       cycles         
 0              4194304        0.000737562    5686.72        2578887
