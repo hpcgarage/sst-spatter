@@ -117,14 +117,18 @@ void SpatterGenerator::generate(MirandaRequestQueue<GeneratorRequest*>* q)
 
 bool SpatterGenerator::isFinished()
 {
-    if (configFin && numIssuedReqs == statCompletedReqs->getCollectionCount()) {
-        // The requests associated with the previous run have completed.
-        performGlobalStatisticOutput();
-        numIssuedReqs = 0;
-        configFin = false;
+    if (configFin) {
+        if (numIssuedReqs == statCompletedReqs->getCollectionCount()) {
+            // The requests associated with the previous run have completed.
+            performGlobalStatisticOutput();
+            numIssuedReqs = 0;
+            configFin = false;
+
+            return (configIdx == cl.configs.size());
+        }
     }
 
-    return (configIdx == cl.configs.size());
+    return false;
 }
 
 void SpatterGenerator::completed()
