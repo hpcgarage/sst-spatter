@@ -33,7 +33,6 @@ def get_kernel_data(filename: str) -> list[str]:
 
 def print_stats(stats_data: pd.DataFrame, kernel_data: list[str]):
     config = 0
-    prev_time = 0.0
 
     print(f"{'config':<15}{'bytes':<15}{'time(s)':<15}{'bw(MB/s)':<15}{'cycles':<15}")
 
@@ -48,15 +47,12 @@ def print_stats(stats_data: pd.DataFrame, kernel_data: list[str]):
             cycles = stat_value
 
         elif stat_name == 'configTime':
-            curr_time = stat_value / 1e+12
-
-            time = curr_time - prev_time
+            time = stat_value / 1e+12
             bw = ((byteCount / 1.0e+06) / time) if (time > 0) else 0.0
 
             print(f"{config:<15}{byteCount:<15}{time:<15g}{bw:<15.2f}{cycles:<15}")
 
             config += 1
-            prev_time = curr_time
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
