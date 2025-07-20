@@ -174,4 +174,3 @@ private:
 }
 }
 #endif /* _RequestGenCPU_H */
-

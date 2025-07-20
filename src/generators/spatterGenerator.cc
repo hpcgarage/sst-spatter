@@ -13,13 +13,19 @@
 // information, see the LICENSE file in the top level directory of the
 // distribution.
 
-#include <sst_config.h>
+#include "sst_config.h"
 #include "spatterGenerator.h"
+
+#include <algorithm>
+#include <cstring>
+#include <sstream>
+#include <vector>
 
 #include <sst/core/params.h>
 
-using namespace SST::SST_Spatter;
+#include <Spatter/Input.hh>
 
+using namespace SST::SST_Spatter;
 
 SpatterGenerator::SpatterGenerator(ComponentId_t id, Params& params) : RequestGenerator(id, params)
 {
@@ -29,11 +35,6 @@ SpatterGenerator::SpatterGenerator(ComponentId_t id, Params& params) : RequestGe
 void SpatterGenerator::build(Params& params)
 {
     const uint32_t verbose = params.find<uint32_t>("verbose", 0);
-    const std::string args = "./Spatter " + params.find<std::string>("args", "");
-
-    char **argv = nullptr;
-    int argc = 0;
-    int res  = 0;
 
     out = new Output("SpatterGenerator[@p:@l]: ", verbose, 0, Output::STDOUT);
 
@@ -41,30 +42,17 @@ void SpatterGenerator::build(Params& params)
     sourceAddr = 0;
     targetAddr = 0;
 
-    datawidth  = params.find<uint32_t>("datawidth", 8);
-    patternIdx = 0;
-    countIdx   = 0;
-    configIdx  = 0;
+    datawidth = params.find<uint32_t>("datawidth", 8);
 
+    patternIdx = 0;
+    countIdx = 0;
+    configIdx = 0;
     configFin = false;
 
     initStatistics();
 
-    // Convert the arguments to a compatible format before parsing them.
-    countArgs(args, argc);
-    tokenizeArgs(args, argc, &argv);
-
-    res = Spatter::parse_input(argc, argv, cl);
-
-
-    // The allocated memory is no longer needed.
-    for (int i = 0; i < argc; ++i) {
-        delete [] argv[i];
-    }
-    delete [] argv;
-
-
-    if (0 != res) {
+    const std::string args = "./Spatter " + params.find<std::string>("args", "");
+    if (!initConfigs(args)) {
         out->fatal(CALL_INFO, -1, "Error: failed to parse provided arguments.\n");
     }
 
@@ -93,26 +81,26 @@ SpatterGenerator::~SpatterGenerator()
 
 void SpatterGenerator::generate(MirandaRequestQueue<GeneratorRequest*>* q)
 {
-    if (!configFin) {
-        config = cl.configs[configIdx].get();
-        queue = q;
+    if (configFin) return;
 
-        if (0 == config->kernel.compare("gather")) {
-            gather();
-        } else if (0 == config->kernel.compare("scatter")) {
-            scatter();
-        } else if (0 == config->kernel.compare("gs")) {
-            gatherScatter();
-        } else if (0 == config->kernel.compare("multigather")) {
-            multiGather();
-        } else if (0 == config->kernel.compare("multiscatter")) {
-            multiScatter();
-        } else {
-            out->fatal(CALL_INFO, -1, "Error: invalid kernel.\n");
-        }
+    config = cl.configs[configIdx].get();
+    queue = q;
 
-        updateIndices();
+    const std::string& kernel = config->kernel;
+
+    if ("gather" == kernel) {
+        gather();
+    } else if ("scatter" == kernel) {
+        scatter();
+    } else if ("gs" == kernel) {
+        gatherScatter();
+    } else if ("multigather" == kernel) {
+        multiGather();
+    } else if ("multiscatter" == kernel) {
+        multiScatter();
     }
+
+    updateIndices();
 }
 
 bool SpatterGenerator::isFinished()
@@ -133,6 +121,17 @@ bool SpatterGenerator::isFinished()
 
 void SpatterGenerator::completed()
 {
+}
+
+/**
+   * @brief Set the Clear Data On Output and Output At End Of Sim flags.
+   *
+   * @param stat Statistic whose flags will be set.
+   */
+void SpatterGenerator::setStatFlags(Statistic<uint64_t>* stat)
+{
+    stat->setFlagClearDataOnOutput(true);
+    stat->setFlagOutputAtEndOfSim(false);
 }
 
 /**
@@ -182,19 +181,59 @@ void SpatterGenerator::initStatistics()
 }
 
 /**
+   * @brief Reset the data and collection count for a given statistic.
+   *
+   * @param stat Statistic whose data and collection count will be reset.
+   */
+void SpatterGenerator::resetStatData(Statistic<uint64_t>* stat)
+{
+    stat->clearStatisticData();
+    stat->resetCollectionCount();
+}
+
+/**
+   * @brief Reset the Miranda CPU statistics.
+   *
+   */
+void SpatterGenerator::resetStatistics()
+{
+    resetStatData(statReqs[READ]);
+    resetStatData(statReqs[WRITE]);
+    resetStatData(statReqs[CUSTOM]);
+    resetStatData(statSplitReqs[READ]);
+    resetStatData(statSplitReqs[WRITE]);
+    resetStatData(statSplitReqs[CUSTOM]);
+    resetStatData(statCompletedReqs);
+    resetStatData(statCyclesWithIssue);
+    resetStatData(statCyclesWithoutIssue);
+    resetStatData(statBytes[READ]);
+    resetStatData(statBytes[WRITE]);
+    resetStatData(statBytes[CUSTOM]);
+    resetStatData(statReqLatency);
+    resetStatData(statTime);
+    resetStatData(statCyclesHitFence);
+    resetStatData(statMaxIssuePerCycle);
+    resetStatData(statCyclesHitReorderLimit);
+    resetStatData(statCycles);
+}
+
+/**
    * @brief Counts the number of arguments in a string.
    *
    * @param args The string of arguments to be counted.
-   * @param argc Number of arguments found in the string.
+   * @return Number of arguments found in the string.
    */
-void SpatterGenerator::countArgs(const std::string &args, int32_t &argc)
+int32_t SpatterGenerator::countArgs(const std::string &args)
 {
+    int32_t count = 0;
     std::istringstream iss(args);
-    std::string tok;
+    std::string token;
 
-    while (iss >> tok) {
-        ++argc;
+    while (iss >> token) {
+        ++count;
     }
+
+    return count;
 }
 
 /**
@@ -208,33 +247,47 @@ void SpatterGenerator::countArgs(const std::string &args, int32_t &argc)
 void SpatterGenerator::tokenizeArgs(const std::string &args, const int32_t &argc, char ***argv)
 {
     std::istringstream iss(args);
-    std::string tok;
+    std::string token;
 
     char **argvPtr = new char *[argc + 1];
     int argvIdx = 0;
 
-    while (iss >> tok) {
-        int arg_size = tok.size() + 1;
+    while (iss >> token) {
+        int arg_size = token.size() + 1;
 
         argvPtr[argvIdx] = new char[arg_size];
-        strncpy(argvPtr[argvIdx], tok.c_str(), arg_size);
+        strncpy(argvPtr[argvIdx], token.c_str(), arg_size);
 
         ++argvIdx;
     }
-    argvPtr[argvIdx] = nullptr;
 
+    argvPtr[argvIdx] = nullptr;
     *argv = argvPtr;
 }
 
 /**
-   * @brief Set the Clear Data On Output and Output At End Of Sim flags.
+   * @brief Initialize the Spatter config list.
    *
-   * @param stat Statistic whose flags will be set.
+   * @param args String of arguments to be parsed.
+   * @return true if the configs are successfully initialized, false otherwise.
    */
-void SpatterGenerator::setStatFlags(Statistic<uint64_t>* stat)
+bool SpatterGenerator::initConfigs(const std::string& args)
 {
-    stat->setFlagClearDataOnOutput(true);
-    stat->setFlagOutputAtEndOfSim(false);
+    char **argv = nullptr;
+    int argc = countArgs(args);
+
+    // Convert the arguments to a compatible format before parsing them.
+    tokenizeArgs(args, argc, &argv);
+
+    int result = Spatter::parse_input(argc, argv, cl);
+
+    // The allocated memory is no longer needed.
+    for (int i = 0; i < argc; ++i) {
+        delete [] argv[i];
+    }
+    delete [] argv;
+
+    return (0 == result);
 }
 
 /**
@@ -245,15 +298,16 @@ void SpatterGenerator::setStatFlags(Statistic<uint64_t>* stat)
    */
 size_t SpatterGenerator::getPatternSize(const Spatter::ConfigurationBase *config)
 {
+    const std::string& kernel = config->kernel;
     size_t patternSize = 0;
 
-    if ((0 == config->kernel.compare("gather")) || (0 == config->kernel.compare("scatter"))) {
+    if ("gather" == kernel || "scatter" == kernel) {
         patternSize = config->pattern.size();
-    } else if ((0 == config->kernel.compare("gs"))) {
+    } else if ("gs" == kernel) {
         patternSize = config->pattern_scatter.size();
-    } else if (0 == config->kernel.compare("multigather")) {
+    } else if ("multigather" == kernel) {
         patternSize = config->pattern_gather.size();
-    } else if (0 == config->kernel.compare("multiscatter")) {
+    } else if ("multiscatter" == kernel) {
         patternSize = config->pattern_scatter.size();
     }
 

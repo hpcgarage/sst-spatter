@@ -14,14 +14,16 @@
 // distribution.
 
 
-#ifndef _H_SST_SPATTER_GEN
-#define _H_SST_SPATTER_GEN
+#ifndef SST_SPATTER_SPATTERGENERATOR_H
+#define SST_SPATTER_SPATTERGENERATOR_H
 
-#include "mirandaGenerator.h"
+#include <cstdint>
+#include <queue>
+#include <string>
+
 #include <sst/core/output.h>
 
-#include <queue>
-
+#include "mirandaGenerator.h"
 #include <Spatter/Input.hh>
 
 namespace SST {
@@ -55,13 +57,17 @@ public:
     )
 
 private:
-    void countArgs(const std::string &args, int32_t &argc);
-    void tokenizeArgs(const std::string &args, const int32_t &argc, char ***argv);
     void setStatFlags(Statistic<uint64_t>* stat);
     void initStatistics();
-    void updateIndices();
+    void resetStatData(Statistic<uint64_t>* stat);
+    void resetStatistics();
+
+    int32_t countArgs(const std::string &args);
+    void tokenizeArgs(const std::string &args, const int32_t &argc, char ***argv);
+    bool initConfigs(const std::string& args);
 
     size_t getPatternSize(const Spatter::ConfigurationBase *config);
+    void updateIndices();
 
     void gather();
     void scatter();
@@ -103,7 +109,7 @@ private:
     Spatter::ConfigurationBase *config;
 };
 
-}
-}
+} // namespace SST_Spatter
+} // namespace SST
 
-#endif
+#endif // SST_SPATTER_SPATTERGENERATOR_H
