@@ -44,6 +44,9 @@ void SpatterGenerator::build(Params& params)
 
     datawidth = params.find<uint32_t>("datawidth", 8);
 
+    maxWarmupRuns = params.find<uint32_t>("warmup_runs", 1);
+    remainingWarmupRuns = maxWarmupRuns;
+
     patternIdx = 0;
     countIdx = 0;
     configIdx = 0;
@@ -106,22 +109,29 @@ void SpatterGenerator::generate(MirandaRequestQueue<GeneratorRequest*>* q)
 
 bool SpatterGenerator::isFinished()
 {
-    if (configFin) {
-        if (numIssuedReqs == statCompletedReqs->getCollectionCount()) {
-            // The requests associated with the previous run have completed.
-            statConfigTime->addData((getCurrentSimTime("1 ps") - configStartTime));
-
-            performGlobalStatisticOutput();
-
-            numIssuedReqs = 0;
-            configFin = false;
-            configStartTime = getCurrentSimTime("1 ps");
-
-            return (configIdx == cl.configs.size());
-        }
+    if (!configFin || numIssuedReqs != statCompletedReqs->getCollectionCount()) {
+        return false;
     }
 
-    return false;
+    // The requests associated with the previous run have completed.
+
+    SimTime_t currentTime = getCurrentSimTime("1 ps");
+    statConfigTime->addData(currentTime - configStartTime);
+
+    numIssuedReqs = 0;
+    configFin = false;
+    configStartTime = currentTime;
+
+    if (0 < remainingWarmupRuns) {
+        remainingWarmupRuns--;
+        configIdx--;
+        resetStatistics();
+    } else {
+        remainingWarmupRuns = maxWarmupRuns;
+        performGlobalStatisticOutput();
+    }
+
+    return (configIdx == cl.configs.size());
 }
 
 void SpatterGenerator::completed()

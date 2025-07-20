@@ -14,4 +14,4 @@
 0:cpu:RequestGenCPU[RequestGenCPU:166]: - Max Store requests pending:     16
 0:cpu:RequestGenCPU[RequestGenCPU:167]: - Max Custom requests pending:     16
 0:cpu:RequestGenCPU[RequestGenCPU:168]: Configuration completed.
-Simulation is complete, simulated time: 858.308 us
+Simulation is complete, simulated time: 1.71702 ms
