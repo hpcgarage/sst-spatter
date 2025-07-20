@@ -46,7 +46,7 @@ def print_stats(stats_data: pd.DataFrame, kernel_data: list[str]):
         elif stat_name == 'cycles':
             cycles = stat_value
 
-        elif stat_name == 'configTime':
+        elif stat_name == 'config_time':
             time = stat_value / 1e+12
             bw = ((byteCount / 1.0e+06) / time) if (time > 0) else 0.0
 

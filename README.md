@@ -87,7 +87,7 @@ cpu, cycles_hit_fence, , Accumulator, 1037546224, 0, 0, 0, 0, 0, 0
 cpu, cycles_max_issue, , Accumulator, 1037546224, 0, 24573, 24573, 24573, 1, 1
 cpu, cycles_max_reorder, , Accumulator, 1037546224, 0, 0, 0, 0, 0, 0
 cpu, cycles, , Accumulator, 1037546224, 0, 1048613, 1048613, 1048613, 1, 1
-cpu:generator, configTime, , Accumulator, 1037546224, 0, 299903318, 89942000147409124, 1, 299903318, 299903318
+cpu:generator, config_time, , Accumulator, 1037546224, 0, 299903318, 89942000147409124, 1, 299903318, 299903318
 ```
 
 To compare this output with Spatter runs, you can use the [spatter_stats.py](tools/spatter_stats.py) helper script to convert the data in the statistics file into Spatter-like statistics.

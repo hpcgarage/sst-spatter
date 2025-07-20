@@ -58,7 +58,7 @@ public:
     )
 
     SST_ELI_DOCUMENT_STATISTICS(
-        { "configTime",         "Time spent completing all requests for a Spatter config", "ps", 1 }
+        { "config_time",         "Time spent completing all requests for a Spatter config", "ps", 1 }
     )
 
 private:

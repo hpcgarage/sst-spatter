@@ -173,7 +173,7 @@ void SpatterGenerator::initStatistics()
     statMaxIssuePerCycle        = registerStatistic<uint64_t>("cycles_max_issue");
     statCyclesHitReorderLimit   = registerStatistic<uint64_t>("cycles_max_reorder");
     statCycles                  = registerStatistic<uint64_t>("cycles");
-    statConfigTime              = registerStatistic<uint64_t>("configTime");
+    statConfigTime              = registerStatistic<uint64_t>("config_time");
 
     // Set the Clear Data On Output and Output At End Of Sim flags.
     setStatFlags(statReqs[READ]);
