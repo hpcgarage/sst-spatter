@@ -66,34 +66,36 @@ The output to the command-line contains SST configuration information, which is 
 The statistics file contains the SST-Spatter statistics output for the simulated runs, saved in a CSV file format.
 
 ```
-head -n 19 stats.csv
+head -n 20 stats.csv
 
 ComponentName, StatisticName, StatisticSubId, StatisticType, SimTime, Rank, Sum.u64, SumSQ.u64, Count.u64, Min.u64, Max.u64
-cpu, read_reqs, , Accumulator, 737561682, 0, 466944, 466944, 466944, 1, 1
-cpu, write_reqs, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, custom_reqs, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, split_read_reqs, , Accumulator, 737561682, 0, 57344, 57344, 57344, 1, 1
-cpu, split_write_reqs, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, split_custom_reqs, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, completed_reqs, , Accumulator, 737561682, 0, 524288, 524288, 524288, 1, 1
-cpu, cycles_with_issue, , Accumulator, 737561682, 0, 524276, 524276, 524276, 1, 1
-cpu, cycles_no_issue, , Accumulator, 737561682, 0, 2054610, 2054610, 2054610, 1, 1
-cpu, total_bytes_read, , Accumulator, 737561682, 0, 4194304, 33554432, 524288, 8, 8
-cpu, total_bytes_write, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, total_bytes_custom, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, req_latency, , Accumulator, 737561682, 0, 11727476, 543265590, 581632, 6, 136
-cpu, time, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, cycles_hit_fence, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, cycles_max_issue, , Accumulator, 737561682, 0, 3, 3, 3, 1, 1
-cpu, cycles_max_reorder, , Accumulator, 737561682, 0, 0, 0, 0, 0, 0
-cpu, cycles, , Accumulator, 737561682, 0, 2578887, 2578887, 2578887, 1, 1
+cpu, read_reqs, , Accumulator, 737642906, 0, 466944, 466944, 466944, 1, 1
+cpu, write_reqs, , Accumulator, 737642906, 0, 524288, 524288, 524288, 1, 1
+cpu, custom_reqs, , Accumulator, 737642906, 0, 0, 0, 0, 0, 0
+cpu, split_read_reqs, , Accumulator, 737642906, 0, 57344, 57344, 57344, 1, 1
+cpu, split_write_reqs, , Accumulator, 737642906, 0, 0, 0, 0, 0, 0
+cpu, split_custom_reqs, , Accumulator, 737642906, 0, 0, 0, 0, 0, 0
+cpu, completed_reqs, , Accumulator, 737642906, 0, 1048576, 1048576, 1048576, 1, 1
+cpu, cycles_with_issue, , Accumulator, 737642906, 0, 581632, 581632, 581632, 1, 1
+cpu, cycles_no_issue, , Accumulator, 737642906, 0, 1997538, 1997538, 1997538, 1, 1
+cpu, total_bytes_read, , Accumulator, 737642906, 0, 4194304, 33554432, 524288, 8, 8
+cpu, total_bytes_write, , Accumulator, 737642906, 0, 4194304, 33554432, 524288, 8, 8
+cpu, total_bytes_custom, , Accumulator, 737642906, 0, 0, 0, 0, 0, 0
+cpu, req_latency, , Accumulator, 737642906, 0, 12380594, 544433674, 1105920, 1, 136
+cpu, time, , Accumulator, 737642906, 0, 0, 0, 0, 0, 0
+cpu, cycles_hit_fence, , Accumulator, 737642906, 0, 0, 0, 0, 0, 0
+cpu, cycles_max_issue, , Accumulator, 737642906, 0, 6, 6, 6, 1, 1
+cpu, cycles_max_reorder, , Accumulator, 737642906, 0, 0, 0, 0, 0, 0
+cpu, cycles, , Accumulator, 737642906, 0, 2579171, 2579171, 2579171, 1, 1
+cpu:generator, configTime, , Accumulator, 737642906, 0, 737642906, 544117056772124836, 1, 737642906, 737642906
 ```
 
 To compare this output with Spatter runs, you can use the [spatter_stats.py](tools/spatter_stats.py) helper script to convert the data in the statistics file into Spatter-like statistics.
 
 ```
+echo '[{"pattern": "UNIFORM:8:1", "count": '"$((2**16))"'}]' > trace.json
 python3 tools/spatter_stats.py stats.csv trace.json
 
 config         bytes          time(s)        bw(MB/s)       cycles         
-0              4194304        0.000737562    5686.72        2578887
+0              4194304        0.000737643    5686.09        2579171
 ```

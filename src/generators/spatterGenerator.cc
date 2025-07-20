@@ -72,6 +72,7 @@ void SpatterGenerator::build(Params& params)
     }
 
     config = cl.configs[configIdx].get();
+    configStartTime = getCurrentSimTime("1 ps");
 }
 
 SpatterGenerator::~SpatterGenerator()
@@ -108,9 +109,13 @@ bool SpatterGenerator::isFinished()
     if (configFin) {
         if (numIssuedReqs == statCompletedReqs->getCollectionCount()) {
             // The requests associated with the previous run have completed.
+            statConfigTime->addData((getCurrentSimTime("1 ps") - configStartTime));
+
             performGlobalStatisticOutput();
+
             numIssuedReqs = 0;
             configFin = false;
+            configStartTime = getCurrentSimTime("1 ps");
 
             return (configIdx == cl.configs.size());
         }
@@ -140,24 +145,25 @@ void SpatterGenerator::setStatFlags(Statistic<uint64_t>* stat)
    */
 void SpatterGenerator::initStatistics()
 {
-    statReqs[READ]            = registerStatistic<uint64_t>("read_reqs");
-    statReqs[WRITE]           = registerStatistic<uint64_t>("write_reqs");
-    statReqs[CUSTOM]          = registerStatistic<uint64_t>("custom_reqs");
-    statSplitReqs[READ]       = registerStatistic<uint64_t>("split_read_reqs");
-    statSplitReqs[WRITE]      = registerStatistic<uint64_t>("split_write_reqs");
-    statSplitReqs[CUSTOM]     = registerStatistic<uint64_t>("split_custom_reqs");
-    statCompletedReqs         = registerStatistic<uint64_t>("completed_reqs");
-    statCyclesWithIssue       = registerStatistic<uint64_t>("cycles_with_issue");
-    statCyclesWithoutIssue    = registerStatistic<uint64_t>("cycles_no_issue");
-    statBytes[READ]           = registerStatistic<uint64_t>("total_bytes_read");
-    statBytes[WRITE]          = registerStatistic<uint64_t>("total_bytes_write");
-    statBytes[CUSTOM]         = registerStatistic<uint64_t>("total_bytes_custom");
-    statReqLatency            = registerStatistic<uint64_t>("req_latency");
-    statTime                  = registerStatistic<uint64_t>("time");
-    statCyclesHitFence        = registerStatistic<uint64_t>("cycles_hit_fence");
-    statMaxIssuePerCycle      = registerStatistic<uint64_t>("cycles_max_issue");
-    statCyclesHitReorderLimit = registerStatistic<uint64_t>("cycles_max_reorder");
-    statCycles                = registerStatistic<uint64_t>("cycles");
+    statReqs[READ]              = registerStatistic<uint64_t>("read_reqs");
+    statReqs[WRITE]             = registerStatistic<uint64_t>("write_reqs");
+    statReqs[CUSTOM]            = registerStatistic<uint64_t>("custom_reqs");
+    statSplitReqs[READ]         = registerStatistic<uint64_t>("split_read_reqs");
+    statSplitReqs[WRITE]        = registerStatistic<uint64_t>("split_write_reqs");
+    statSplitReqs[CUSTOM]       = registerStatistic<uint64_t>("split_custom_reqs");
+    statCompletedReqs           = registerStatistic<uint64_t>("completed_reqs");
+    statCyclesWithIssue         = registerStatistic<uint64_t>("cycles_with_issue");
+    statCyclesWithoutIssue      = registerStatistic<uint64_t>("cycles_no_issue");
+    statBytes[READ]             = registerStatistic<uint64_t>("total_bytes_read");
+    statBytes[WRITE]            = registerStatistic<uint64_t>("total_bytes_write");
+    statBytes[CUSTOM]           = registerStatistic<uint64_t>("total_bytes_custom");
+    statReqLatency              = registerStatistic<uint64_t>("req_latency");
+    statTime                    = registerStatistic<uint64_t>("time");
+    statCyclesHitFence          = registerStatistic<uint64_t>("cycles_hit_fence");
+    statMaxIssuePerCycle        = registerStatistic<uint64_t>("cycles_max_issue");
+    statCyclesHitReorderLimit   = registerStatistic<uint64_t>("cycles_max_reorder");
+    statCycles                  = registerStatistic<uint64_t>("cycles");
+    statConfigTime              = registerStatistic<uint64_t>("configTime");
 
     // Set the Clear Data On Output and Output At End Of Sim flags.
     setStatFlags(statReqs[READ]);
@@ -178,6 +184,7 @@ void SpatterGenerator::initStatistics()
     setStatFlags(statMaxIssuePerCycle);
     setStatFlags(statCyclesHitReorderLimit);
     setStatFlags(statCycles);
+    setStatFlags(statConfigTime);
 }
 
 /**
@@ -215,6 +222,7 @@ void SpatterGenerator::resetStatistics()
     resetStatData(statMaxIssuePerCycle);
     resetStatData(statCyclesHitReorderLimit);
     resetStatData(statCycles);
+    resetStatData(statConfigTime);
 }
 
 /**

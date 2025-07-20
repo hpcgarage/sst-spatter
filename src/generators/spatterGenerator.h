@@ -49,11 +49,15 @@ public:
     )
 
     SST_ELI_DOCUMENT_PARAMS(
-        { "verbose",             "Sets the verbosity of the output", "0" },
-        { "args",                "Sets the arguments to describe Spatter pattern(s)", "" },
-        { "datawidth",           "Sets the width of the memory operation", "8" },
-        { "start_source",        "Sets the start address of the source array", "0" },
-        { "start_target",        "Sets the start address of the target array", "0" }
+        { "verbose",            "Sets the verbosity of the output", "0" },
+        { "args",               "Sets the arguments to describe Spatter pattern(s)", "" },
+        { "datawidth",          "Sets the width of the memory operation", "8" },
+        { "start_source",       "Sets the start address of the source array", "0" },
+        { "start_target",       "Sets the start address of the target array", "0" }
+    )
+
+    SST_ELI_DOCUMENT_STATISTICS(
+        { "configTime",         "Time spent completing all requests for a Spatter config", "ps", 1 }
     )
 
 private:
@@ -88,6 +92,8 @@ private:
 
     bool configFin;
 
+    SimTime_t configStartTime;
+
     Statistic<uint64_t>* statReqs[OPCOUNT];
     Statistic<uint64_t>* statSplitReqs[OPCOUNT];
     Statistic<uint64_t>* statCompletedReqs;
@@ -100,6 +106,7 @@ private:
     Statistic<uint64_t>* statCyclesHitFence;
     Statistic<uint64_t>* statCyclesHitReorderLimit;
     Statistic<uint64_t>* statCycles;
+    Statistic<uint64_t>* statConfigTime;
 
     MirandaRequestQueue<GeneratorRequest*>* queue;
 

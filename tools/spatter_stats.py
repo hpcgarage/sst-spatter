@@ -26,7 +26,8 @@ def get_kernel_data(filename: str) -> list[str]:
 
     kernel_data = []
     for pattern in patterns:
-        kernel_data.append(pattern['kernel'].lower())
+        kernel = pattern.get('kernel', 'gather')
+        kernel_data.append(kernel.lower())
 
     return kernel_data
 
@@ -44,11 +45,13 @@ def print_stats(stats_data: pd.DataFrame, kernel_data: list[str]):
             byteCount = (stat_value * 2) if kernel_data[config] == 'gs' else stat_value
 
         elif stat_name == 'cycles':
-            curr_time = row.SimTime / 1e+12
+            cycles = stat_value
+
+        elif stat_name == 'configTime':
+            curr_time = stat_value / 1e+12
 
             time = curr_time - prev_time
             bw = ((byteCount / 1.0e+06) / time) if (time > 0) else 0.0
-            cycles = stat_value
 
             print(f"{config:<15}{byteCount:<15}{time:<15g}{bw:<15.2f}{cycles:<15}")
 

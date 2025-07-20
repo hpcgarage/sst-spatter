@@ -17,6 +17,7 @@ cpu, cycles_hit_fence, , Accumulator, 880599500, 0, 0, 0, 0, 0, 0
 cpu, cycles_max_issue, , Accumulator, 880599500, 0, 413702, 413702, 413702, 1, 1
 cpu, cycles_max_reorder, , Accumulator, 880599500, 0, 365, 365, 365, 1, 1
 cpu, cycles, , Accumulator, 880599500, 0, 1761199, 1761199, 1761199, 1, 1
+cpu:generator, configTime, , Accumulator, 880599500, 0, 880599500, 775455479400250000, 1, 880599500, 880599500
 l1cache:prefetcher, prefetch_opportunities, , Accumulator, 880599500, 0, 290816, 290816, 290816, 1, 1
 l1cache:prefetcher, prefetches_issued, , Accumulator, 880599500, 0, 16130, 16130, 16130, 1, 1
 l1cache:prefetcher, prefetches_canceled_by_page_boundary, , Accumulator, 880599500, 0, 7920, 7920, 7920, 1, 1
