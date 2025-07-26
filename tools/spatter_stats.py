@@ -9,6 +9,11 @@ def load_stats(filename: str) -> pd.DataFrame:
     try:
         df = pd.read_csv(filename)
         df.columns = df.columns.str.strip().str.replace('.', '_')
+
+        expected_columns = {'StatisticName', 'Sum_u64'}
+        if not expected_columns.issubset(df.columns):
+            raise ValueError(f"Expected 'StatisticName' and 'Sum.u64' columns in CSV file")
+
         return df
     except Exception as error:
         print(f'Error: {error}.')
@@ -58,6 +63,12 @@ def main():
 
     stats_df = load_stats(stats_file)
     kernel_list = extract_kernels(pattern_file)
+
+    num_configs = (stats_df['StatisticName'].str.strip() == 'config_time').sum()
+
+    if num_configs != len(kernel_list):
+        print('Error: Number of configurations in CSV and JSON files do not match.')
+        sys.exit(1)
 
     print_stats(stats_df, kernel_list)
 
