@@ -8,7 +8,7 @@ DEFAULT_KERNEL = 'gather'
 def load_stats(filename: str) -> pd.DataFrame:
     try:
         df = pd.read_csv(filename)
-        df.columns = df.columns.str.strip().str.replace('.', '_')
+        df.columns = df.columns.str.strip().str.replace('.', '_', regex=True)
 
         expected_columns = {'StatisticName', 'Sum_u64'}
         if not expected_columns.issubset(df.columns):
