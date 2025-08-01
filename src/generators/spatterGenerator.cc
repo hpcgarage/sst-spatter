@@ -54,6 +54,10 @@ void SpatterGenerator::build(Params& params)
 
     initStatistics();
 
+    if (statCompletedReqs->isNullStatistic()) {
+        out->fatal(CALL_INFO, -1, "Error: statistic 'completed_reqs' not enabled.\n");
+    }
+
     const std::string args = "./Spatter " + params.find<std::string>("args", "");
     if (!initConfigs(args)) {
         out->fatal(CALL_INFO, -1, "Error: failed to parse provided arguments.\n");
