@@ -466,10 +466,10 @@ bool RequestGenCPU::clockTick(SST::Cycle_t cycle) {
             break;
     	}
 
-        MemoryOpRequest* memOpReq;
-	GeneratorRequest* nxtRq = pendingRequests.at(i);
 
-	if(nxtRq->getOperation() == REQ_FENCE) {
+	GeneratorRequest* nxtRq = pendingRequests.at(i);
+    	ReqOperation op = nxtRq->getOperation();
+    	if(op == REQ_FENCE) {
             if(0 == requestsInFlight.size()) {
 		out->verbose(CALL_INFO, 4, 0, "Fence operation completed, no pending requests, will be retired.\n");
 
@@ -486,7 +486,7 @@ bool RequestGenCPU::clockTick(SST::Cycle_t cycle) {
 
             // Fence operations do now allow anything else to complete in this cycle
             break;
-        } else if (nxtRq->getOperation() == CUSTOM) {
+    	} else if (op == CUSTOM) {
             if (requestsPending[CUSTOM] < maxRequestsPending[CUSTOM]) {
                 out->verbose(CALL_INFO, 4, 0, "Will attempt to issue as free slots in the load/store unit.\n");
 
@@ -504,9 +504,9 @@ bool RequestGenCPU::clockTick(SST::Cycle_t cycle) {
                     delete nxtRq;
                 }
             }
-        } else if ( ( memOpReq = dynamic_cast<MemoryOpRequest*>(nxtRq) ) ) {
-
-            if( requestsPending[memOpReq->getOperation()] < maxRequestsPending[memOpReq->getOperation()] ) {
+    	} else if (op == READ || op == WRITE) {
+    		if( requestsPending[op] < maxRequestsPending[op] ) {
+    			auto memOpReq = static_cast<MemoryOpRequest*>(nxtRq);
                 out->verbose(CALL_INFO, 4, 0, "Will attempt to issue as free slots in the load/store unit.\n");
 
 

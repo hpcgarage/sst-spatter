@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="sst-spatter" targetName="pdf" />
+      <config projectName="sst-spatter" targetName="install" />
+      <config projectName="sst-spatter" targetName="install-am" />
+      <config projectName="sst-spatter" targetName="install-html-am" />
+      <config projectName="sst-spatter" targetName="dist-shar" />
+      <config projectName="sst-spatter" targetName="install-exec" />
+      <config projectName="sst-spatter" targetName="dist-xz" />
+      <config projectName="sst-spatter" targetName="installcheck-am" />
+      <config projectName="sst-spatter" targetName="tags" />
+      <config projectName="sst-spatter" targetName="dist-all" />
+      <config projectName="sst-spatter" targetName="maintainer-clean-generic" />
+      <config projectName="sst-spatter" targetName="cscopelist" />
+      <config projectName="sst-spatter" targetName="installdirs-am" />
+      <config projectName="sst-spatter" targetName="dist-zstd" />
+      <config projectName="sst-spatter" targetName="install-data-recursive" />
+      <config projectName="sst-spatter" targetName="dist-lzip" />
+      <config projectName="sst-spatter" targetName="install-strip" />
+      <config projectName="sst-spatter" targetName="GTAGS" />
+      <config projectName="sst-spatter" targetName="install-pdf" />
+      <config projectName="sst-spatter" targetName="ctags-am" />
+      <config projectName="sst-spatter" targetName="clean-cscope" />
+      <config projectName="sst-spatter" targetName="dvi" />
+      <config projectName="sst-spatter" targetName="uninstall-am" />
+      <config projectName="sst-spatter" targetName="ps-am" />
+      <config projectName="sst-spatter" targetName="installdirs" />
+      <config projectName="sst-spatter" targetName="cscopelist-recursive" />
+      <config projectName="sst-spatter" targetName="ps" />
+      <config projectName="sst-spatter" targetName="distcleancheck" />
+      <config projectName="sst-spatter" targetName="installdirs-recursive" />
+      <config projectName="sst-spatter" targetName="mostlyclean-recursive" />
+      <config projectName="sst-spatter" targetName="config" />
+      <config projectName="sst-spatter" targetName="install-pdf-recursive" />
+      <config projectName="sst-spatter" targetName="all-am" />
+      <config projectName="sst-spatter" targetName="uninstall" />
+      <config projectName="sst-spatter" targetName="install-dvi" />
+      <config projectName="sst-spatter" targetName="install-dvi-recursive" />
+      <config projectName="sst-spatter" targetName="install-ps-am" />
+      <config projectName="sst-spatter" targetName="maintainer-clean" />
+      <config projectName="sst-spatter" targetName="distclean-tags" />
+      <config projectName="sst-spatter" targetName="all" />
+      <config projectName="sst-spatter" targetName="maintainer-clean-am" />
+      <config projectName="sst-spatter" targetName="info-am" />
+      <config projectName="sst-spatter" targetName="ps-recursive" />
+      <config projectName="sst-spatter" targetName="am--refresh" />
+      <config projectName="sst-spatter" targetName="ctags" />
+      <config projectName="sst-spatter" targetName="install-exec-recursive" />
+      <config projectName="sst-spatter" targetName="clean-libtool" />
+      <config projectName="sst-spatter" targetName="pdf-am" />
+      <config projectName="sst-spatter" targetName="installcheck" />
+      <config projectName="sst-spatter" targetName="CTAGS" />
+      <config projectName="sst-spatter" targetName="distdir" />
+      <config projectName="sst-spatter" targetName="install-exec-am" />
+      <config projectName="sst-spatter" targetName="clean-recursive" />
+      <config projectName="sst-spatter" targetName="install-data-am" />
+      <config projectName="sst-spatter" targetName="clean-generic" />
+      <config projectName="sst-spatter" targetName="dist" />
+      <config projectName="sst-spatter" targetName="distclean-recursive" />
+      <config projectName="sst-spatter" targetName="check-am" />
+      <config projectName="sst-spatter" targetName="cscopelist-am" />
+      <config projectName="sst-spatter" targetName="check" />
+      <config projectName="sst-spatter" targetName="dist-zip" />
+      <config projectName="sst-spatter" targetName="html" />
+      <config projectName="sst-spatter" targetName="install-man" />
+      <config projectName="sst-spatter" targetName="mostlyclean-am" />
+      <config projectName="sst-spatter" targetName="distclean-am" />
+      <config projectName="sst-spatter" targetName="info" />
+      <config projectName="sst-spatter" targetName="dvi-am" />
+      <config projectName="sst-spatter" targetName="uninstall-recursive" />
+      <config projectName="sst-spatter" targetName="tools" />
+      <config projectName="sst-spatter" targetName="distclean-generic" />
+      <config projectName="sst-spatter" targetName="html-recursive" />
+      <config projectName="sst-spatter" targetName="install-html-recursive" />
+      <config projectName="sst-spatter" targetName="distclean-libtool" />
+      <config projectName="sst-spatter" targetName="mostlyclean-libtool" />
+      <config projectName="sst-spatter" targetName="distclean" />
+      <config projectName="sst-spatter" targetName="check-recursive" />
+      <config projectName="sst-spatter" targetName="mostlyclean-generic" />
+      <config projectName="sst-spatter" targetName="installcheck-recursive" />
+      <config projectName="sst-spatter" targetName="all-recursive" />
+      <config projectName="sst-spatter" targetName="install-pdf-am" />
+      <config projectName="sst-spatter" targetName="info-recursive" />
+      <config projectName="sst-spatter" targetName="distdir-am" />
+      <config projectName="sst-spatter" targetName="install-recursive" />
+      <config projectName="sst-spatter" targetName="install-info-recursive" />
+      <config projectName="sst-spatter" targetName="distuninstallcheck" />
+      <config projectName="sst-spatter" targetName="tags-am" />
+      <config projectName="sst-spatter" targetName="ID" />
+      <config projectName="sst-spatter" targetName="install-ps" />
+      <config projectName="sst-spatter" targetName="install-data" />
+      <config projectName="sst-spatter" targetName="install-html" />
+      <config projectName="sst-spatter" targetName="dist-bzip2" />
+      <config projectName="sst-spatter" targetName="install-info-am" />
+      <config projectName="sst-spatter" targetName="clean-am" />
+      <config projectName="sst-spatter" targetName="dist-bzip3" />
+      <config projectName="sst-spatter" targetName="pdf-recursive" />
+      <config projectName="sst-spatter" targetName="install-info" />
+      <config projectName="sst-spatter" targetName="dist-gzip" />
+      <config projectName="sst-spatter" targetName="cscope" />
+      <config projectName="sst-spatter" targetName="html-am" />
+      <config projectName="sst-spatter" targetName="maintainer-clean-recursive" />
+      <config projectName="sst-spatter" targetName="install-dvi-am" />
+      <config projectName="sst-spatter" targetName="mostlyclean" />
+      <config projectName="sst-spatter" targetName="dist-tarZ" />
+      <config projectName="sst-spatter" targetName="ctags-recursive" />
+      <config projectName="sst-spatter" targetName="distcheck" />
+      <config projectName="sst-spatter" targetName="install-ps-recursive" />
+      <config projectName="sst-spatter" targetName="TAGS" />
+      <config projectName="sst-spatter" targetName="tags-recursive" />
+      <config projectName="sst-spatter" targetName="dvi-recursive" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dbaf85d1-34f7-43ba-b12c-e294617a004c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/mirandaCPU.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/mirandaCPU.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mirandaGenerator.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mirandaGenerator.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MakefileLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="sst-spatter" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="sst-spatter" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2025" />
+    <option name="minorVersion" value="1.3" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="30vpXYltKKxD78WFhyt9xNPT5Bg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "add-15-changes",
+    "last_opened_file_path": "/Users/marklacanilao/Desktop/sst-spatter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Native Application.all">
+    <configuration name="CTAGS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="CTAGS" CONFIG_NAME="CTAGS" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GTAGS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="GTAGS" CONFIG_NAME="GTAGS" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ID" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="ID" CONFIG_NAME="ID" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TAGS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="TAGS" CONFIG_NAME="TAGS" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="all-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="all-am" CONFIG_NAME="all-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="all-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="all-recursive" CONFIG_NAME="all-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="all" CONFIG_NAME="all" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="am--refresh" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="am--refresh" CONFIG_NAME="am--refresh" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="check-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="check-am" CONFIG_NAME="check-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="check-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="check-recursive" CONFIG_NAME="check-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="check" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="check" CONFIG_NAME="check" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="clean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="clean-am" CONFIG_NAME="clean-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="clean-cscope" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="clean-cscope" CONFIG_NAME="clean-cscope" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="clean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="clean-generic" CONFIG_NAME="clean-generic" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="clean-libtool" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="clean-libtool" CONFIG_NAME="clean-libtool" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="clean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="clean-recursive" CONFIG_NAME="clean-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="config" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="config" CONFIG_NAME="config" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cscope" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="cscope" CONFIG_NAME="cscope" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cscopelist-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="cscopelist-am" CONFIG_NAME="cscopelist-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cscopelist-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="cscopelist-recursive" CONFIG_NAME="cscopelist-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cscopelist" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="cscopelist" CONFIG_NAME="cscopelist" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ctags-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="ctags-am" CONFIG_NAME="ctags-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ctags-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="ctags-recursive" CONFIG_NAME="ctags-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ctags" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="ctags" CONFIG_NAME="ctags" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-all" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-all" CONFIG_NAME="dist-all" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-bzip2" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-bzip2" CONFIG_NAME="dist-bzip2" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-bzip3" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-bzip3" CONFIG_NAME="dist-bzip3" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-gzip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-gzip" CONFIG_NAME="dist-gzip" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-lzip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-lzip" CONFIG_NAME="dist-lzip" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-shar" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-shar" CONFIG_NAME="dist-shar" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-tarZ" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-tarZ" CONFIG_NAME="dist-tarZ" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-xz" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-xz" CONFIG_NAME="dist-xz" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-zip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-zip" CONFIG_NAME="dist-zip" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist-zstd" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist-zstd" CONFIG_NAME="dist-zstd" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dist" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dist" CONFIG_NAME="dist" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distcheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distcheck" CONFIG_NAME="distcheck" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distclean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distclean-am" CONFIG_NAME="distclean-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distclean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distclean-generic" CONFIG_NAME="distclean-generic" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distclean-libtool" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distclean-libtool" CONFIG_NAME="distclean-libtool" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distclean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distclean-recursive" CONFIG_NAME="distclean-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distclean-tags" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distclean-tags" CONFIG_NAME="distclean-tags" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distclean" CONFIG_NAME="distclean" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distcleancheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distcleancheck" CONFIG_NAME="distcleancheck" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distdir-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distdir-am" CONFIG_NAME="distdir-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distdir" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distdir" CONFIG_NAME="distdir" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="distuninstallcheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="distuninstallcheck" CONFIG_NAME="distuninstallcheck" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dvi-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dvi-am" CONFIG_NAME="dvi-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dvi-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dvi-recursive" CONFIG_NAME="dvi-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dvi" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="dvi" CONFIG_NAME="dvi" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="html-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="html-am" CONFIG_NAME="html-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="html-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="html-recursive" CONFIG_NAME="html-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="html" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="html" CONFIG_NAME="html" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="info-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="info-am" CONFIG_NAME="info-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="info-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="info-recursive" CONFIG_NAME="info-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="info" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="info" CONFIG_NAME="info" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-am" CONFIG_NAME="install-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-data-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-data-am" CONFIG_NAME="install-data-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-data-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-data-recursive" CONFIG_NAME="install-data-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-data" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-data" CONFIG_NAME="install-data" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-dvi-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-dvi-am" CONFIG_NAME="install-dvi-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-dvi-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-dvi-recursive" CONFIG_NAME="install-dvi-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-dvi" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-dvi" CONFIG_NAME="install-dvi" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-exec-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-exec-am" CONFIG_NAME="install-exec-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-exec-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-exec-recursive" CONFIG_NAME="install-exec-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-exec" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-exec" CONFIG_NAME="install-exec" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-html-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-html-am" CONFIG_NAME="install-html-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-html-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-html-recursive" CONFIG_NAME="install-html-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-html" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-html" CONFIG_NAME="install-html" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-info-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-info-am" CONFIG_NAME="install-info-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-info-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-info-recursive" CONFIG_NAME="install-info-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-info" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-info" CONFIG_NAME="install-info" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-man" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-man" CONFIG_NAME="install-man" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-pdf-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-pdf-am" CONFIG_NAME="install-pdf-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-pdf-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-pdf-recursive" CONFIG_NAME="install-pdf-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-pdf" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-pdf" CONFIG_NAME="install-pdf" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-ps-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-ps-am" CONFIG_NAME="install-ps-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-ps-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-ps-recursive" CONFIG_NAME="install-ps-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-ps" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-ps" CONFIG_NAME="install-ps" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-recursive" CONFIG_NAME="install-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install-strip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install-strip" CONFIG_NAME="install-strip" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="install" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="install" CONFIG_NAME="install" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="installcheck-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="installcheck-am" CONFIG_NAME="installcheck-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="installcheck-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="installcheck-recursive" CONFIG_NAME="installcheck-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="installcheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="installcheck" CONFIG_NAME="installcheck" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="installdirs-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="installdirs-am" CONFIG_NAME="installdirs-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="installdirs-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="installdirs-recursive" CONFIG_NAME="installdirs-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="installdirs" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="installdirs" CONFIG_NAME="installdirs" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="maintainer-clean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="maintainer-clean-am" CONFIG_NAME="maintainer-clean-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="maintainer-clean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="maintainer-clean-generic" CONFIG_NAME="maintainer-clean-generic" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="maintainer-clean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="maintainer-clean-recursive" CONFIG_NAME="maintainer-clean-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="maintainer-clean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="maintainer-clean" CONFIG_NAME="maintainer-clean" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mostlyclean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="mostlyclean-am" CONFIG_NAME="mostlyclean-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mostlyclean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="mostlyclean-generic" CONFIG_NAME="mostlyclean-generic" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mostlyclean-libtool" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="mostlyclean-libtool" CONFIG_NAME="mostlyclean-libtool" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mostlyclean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="mostlyclean-recursive" CONFIG_NAME="mostlyclean-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mostlyclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="mostlyclean" CONFIG_NAME="mostlyclean" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pdf-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="pdf-am" CONFIG_NAME="pdf-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pdf-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="pdf-recursive" CONFIG_NAME="pdf-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pdf" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="pdf" CONFIG_NAME="pdf" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ps-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="ps-am" CONFIG_NAME="ps-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ps-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="ps-recursive" CONFIG_NAME="ps-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ps" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="ps" CONFIG_NAME="ps" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tags-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="tags-am" CONFIG_NAME="tags-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tags-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="tags-recursive" CONFIG_NAME="tags-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tags" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="tags" CONFIG_NAME="tags" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tools" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="tools" CONFIG_NAME="tools" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uninstall-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="uninstall-am" CONFIG_NAME="uninstall-am" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uninstall-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="uninstall-recursive" CONFIG_NAME="uninstall-recursive" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uninstall" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sst-spatter" TARGET_NAME="uninstall" CONFIG_NAME="uninstall" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Native Application.all" />
+      <item itemvalue="Native Application.all-am" />
+      <item itemvalue="Native Application.all-recursive" />
+      <item itemvalue="Native Application.am--refresh" />
+      <item itemvalue="Native Application.check" />
+      <item itemvalue="Native Application.check-am" />
+      <item itemvalue="Native Application.check-recursive" />
+      <item itemvalue="Native Application.clean-cscope" />
+      <item itemvalue="Native Application.clean-generic" />
+      <item itemvalue="Native Application.clean-libtool" />
+      <item itemvalue="Native Application.clean-recursive" />
+      <item itemvalue="Native Application.cscope" />
+      <item itemvalue="Native Application.cscopelist-am" />
+      <item itemvalue="Native Application.cscopelist-recursive" />
+      <item itemvalue="Native Application.CTAGS" />
+      <item itemvalue="Native Application.ctags" />
+      <item itemvalue="Native Application.ctags-am" />
+      <item itemvalue="Native Application.ctags-recursive" />
+      <item itemvalue="Native Application.dist" />
+      <item itemvalue="Native Application.dist-all" />
+      <item itemvalue="Native Application.dist-bzip2" />
+      <item itemvalue="Native Application.dist-bzip3" />
+      <item itemvalue="Native Application.dist-gzip" />
+      <item itemvalue="Native Application.dist-lzip" />
+      <item itemvalue="Native Application.dist-shar" />
+      <item itemvalue="Native Application.dist-tarZ" />
+      <item itemvalue="Native Application.dist-xz" />
+      <item itemvalue="Native Application.dist-zip" />
+      <item itemvalue="Native Application.dist-zstd" />
+      <item itemvalue="Native Application.distcheck" />
+      <item itemvalue="Native Application.distclean" />
+      <item itemvalue="Native Application.distclean-generic" />
+      <item itemvalue="Native Application.distclean-libtool" />
+      <item itemvalue="Native Application.distclean-recursive" />
+      <item itemvalue="Native Application.distclean-tags" />
+      <item itemvalue="Native Application.distcleancheck" />
+      <item itemvalue="Native Application.distdir" />
+      <item itemvalue="Native Application.distuninstallcheck" />
+      <item itemvalue="Native Application.dvi" />
+      <item itemvalue="Native Application.dvi-am" />
+      <item itemvalue="Native Application.dvi-recursive" />
+      <item itemvalue="Native Application.GTAGS" />
+      <item itemvalue="Native Application.html" />
+      <item itemvalue="Native Application.html-am" />
+      <item itemvalue="Native Application.html-recursive" />
+      <item itemvalue="Native Application.info" />
+      <item itemvalue="Native Application.info-am" />
+      <item itemvalue="Native Application.info-recursive" />
+      <item itemvalue="Native Application.install" />
+      <item itemvalue="Native Application.install-am" />
+      <item itemvalue="Native Application.install-data" />
+      <item itemvalue="Native Application.install-data-am" />
+      <item itemvalue="Native Application.install-data-recursive" />
+      <item itemvalue="Native Application.install-dvi" />
+      <item itemvalue="Native Application.install-dvi-am" />
+      <item itemvalue="Native Application.install-dvi-recursive" />
+      <item itemvalue="Native Application.install-exec" />
+      <item itemvalue="Native Application.install-exec-am" />
+      <item itemvalue="Native Application.install-exec-recursive" />
+      <item itemvalue="Native Application.install-html" />
+      <item itemvalue="Native Application.install-html-am" />
+      <item itemvalue="Native Application.install-html-recursive" />
+      <item itemvalue="Native Application.install-info" />
+      <item itemvalue="Native Application.install-info-am" />
+      <item itemvalue="Native Application.install-info-recursive" />
+      <item itemvalue="Native Application.install-man" />
+      <item itemvalue="Native Application.install-pdf" />
+      <item itemvalue="Native Application.install-pdf-am" />
+      <item itemvalue="Native Application.install-pdf-recursive" />
+      <item itemvalue="Native Application.install-ps" />
+      <item itemvalue="Native Application.install-ps-am" />
+      <item itemvalue="Native Application.install-ps-recursive" />
+      <item itemvalue="Native Application.install-recursive" />
+      <item itemvalue="Native Application.install-strip" />
+      <item itemvalue="Native Application.installcheck" />
+      <item itemvalue="Native Application.installcheck-am" />
+      <item itemvalue="Native Application.installcheck-recursive" />
+      <item itemvalue="Native Application.installdirs" />
+      <item itemvalue="Native Application.installdirs-am" />
+      <item itemvalue="Native Application.installdirs-recursive" />
+      <item itemvalue="Native Application.maintainer-clean" />
+      <item itemvalue="Native Application.maintainer-clean-generic" />
+      <item itemvalue="Native Application.maintainer-clean-recursive" />
+      <item itemvalue="Native Application.mostlyclean" />
+      <item itemvalue="Native Application.mostlyclean-generic" />
+      <item itemvalue="Native Application.mostlyclean-libtool" />
+      <item itemvalue="Native Application.mostlyclean-recursive" />
+      <item itemvalue="Native Application.pdf" />
+      <item itemvalue="Native Application.pdf-am" />
+      <item itemvalue="Native Application.pdf-recursive" />
+      <item itemvalue="Native Application.ps" />
+      <item itemvalue="Native Application.ps-am" />
+      <item itemvalue="Native Application.ps-recursive" />
+      <item itemvalue="Native Application.TAGS" />
+      <item itemvalue="Native Application.tags" />
+      <item itemvalue="Native Application.tags-am" />
+      <item itemvalue="Native Application.tags-recursive" />
+      <item itemvalue="Native Application.uninstall" />
+      <item itemvalue="Native Application.uninstall-am" />
+      <item itemvalue="Native Application.uninstall-recursive" />
+      <item itemvalue="Native Application.clean-am" />
+      <item itemvalue="Native Application.config" />
+      <item itemvalue="Native Application.cscopelist" />
+      <item itemvalue="Native Application.distclean-am" />
+      <item itemvalue="Native Application.distdir-am" />
+      <item itemvalue="Native Application.ID" />
+      <item itemvalue="Native Application.maintainer-clean-am" />
+      <item itemvalue="Native Application.mostlyclean-am" />
+      <item itemvalue="Native Application.tools" />
+    </list>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dbaf85d1-34f7-43ba-b12c-e294617a004c" name="Changes" comment="" />
+      <created>1754517940237</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754517940237</updated>
+      <workItem from="1754517941394" duration="754000" />
+      <workItem from="1755033756741" duration="7518000" />
+      <workItem from="1755068446465" duration="602000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
