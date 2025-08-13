@@ -186,7 +186,7 @@ void RequestGenCPU::handleSrcEvent( Event* ev ) {
 	out->verbose(CALL_INFO, 2, 0, "got %lu generators\n", event->generators.size() );
 	loadGenerator( event );
 
-	if ( 0 != timeConverter->convertFromCoreTime( getCurrentSimCycle()) ) {
+	if ( 0 != timeConverter.convertFromCoreTime( getCurrentSimCycle()) ) {
 		clockTick( reregisterClock( timeConverter, clockHandler ) );
 	}
 
