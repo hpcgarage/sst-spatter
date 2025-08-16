@@ -323,7 +323,8 @@ bool SpatterGenerator::initConfigs(const std::string& args)
    *         Otherwise, returns the address as provided if already aligned.
    */
 uint64_t SpatterGenerator::alignAddress(const uint64_t cacheLineSize, const uint64_t address) {
-    return (address + cacheLineSize - 1) / cacheLineSize * cacheLineSize;
+    // Use bitwise operation for power-of-2 cacheLineSize to avoid overflow
+    return (address + cacheLineSize - 1) & ~(cacheLineSize - 1);
 }
 
 /**
