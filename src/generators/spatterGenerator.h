@@ -14,14 +14,16 @@
 // distribution.
 
 
-#ifndef _H_SST_SPATTER_GEN
-#define _H_SST_SPATTER_GEN
+#ifndef SST_SPATTER_SPATTERGENERATOR_H
+#define SST_SPATTER_SPATTERGENERATOR_H
 
-#include "mirandaGenerator.h"
+#include <cstdint>
+#include <queue>
+#include <string>
+
 #include <sst/core/output.h>
 
-#include <queue>
-
+#include "mirandaGenerator.h"
 #include <Spatter/Input.hh>
 
 namespace SST {
@@ -47,21 +49,30 @@ public:
     )
 
     SST_ELI_DOCUMENT_PARAMS(
-        { "verbose",             "Sets the verbosity of the output", "0" },
-        { "args",                "Sets the arguments to describe Spatter pattern(s)", "" },
-        { "datawidth",           "Sets the width of the memory operation", "8" },
-        { "start_source",        "Sets the start address of the source array", "0" },
-        { "start_target",        "Sets the start address of the target array", "0" }
+        { "verbose",            "Sets the verbosity of the output", "0" },
+        { "args",               "Sets the arguments to describe Spatter pattern(s)", "" },
+        { "datawidth",          "Sets the width of the memory operation", "8" },
+        { "start_source",       "Sets the start address of the source array", "0" },
+        { "start_target",       "Sets the start address of the target array", "0" },
+        { "warmup_runs",        "Sets the the number of warm-up runs", "1" }
+    )
+
+    SST_ELI_DOCUMENT_STATISTICS(
+        { "config_time",         "Time spent completing all requests for a Spatter config", "ps", 1 }
     )
 
 private:
-    void countArgs(const std::string &args, int32_t &argc);
-    void tokenizeArgs(const std::string &args, const int32_t &argc, char ***argv);
     void setStatFlags(Statistic<uint64_t>* stat);
     void initStatistics();
-    void updateIndices();
+    void resetStatData(Statistic<uint64_t>* stat);
+    void resetStatistics();
+
+    int32_t countArgs(const std::string &args);
+    void tokenizeArgs(const std::string &args, const int32_t &argc, char ***argv);
+    bool initConfigs(const std::string& args);
 
     size_t getPatternSize(const Spatter::ConfigurationBase *config);
+    void updateIndices();
 
     void gather();
     void scatter();
@@ -75,12 +86,16 @@ private:
     uint32_t datawidth;
     uint32_t startSource;
     uint32_t startTarget;
+    uint32_t maxWarmupRuns;
+    uint32_t remainingWarmupRuns;
 
     size_t patternIdx;
     size_t countIdx;
     size_t configIdx;
 
     bool configFin;
+
+    SimTime_t configStartTime;
 
     Statistic<uint64_t>* statReqs[OPCOUNT];
     Statistic<uint64_t>* statSplitReqs[OPCOUNT];
@@ -94,6 +109,7 @@ private:
     Statistic<uint64_t>* statCyclesHitFence;
     Statistic<uint64_t>* statCyclesHitReorderLimit;
     Statistic<uint64_t>* statCycles;
+    Statistic<uint64_t>* statConfigTime;
 
     MirandaRequestQueue<GeneratorRequest*>* queue;
 
@@ -103,7 +119,7 @@ private:
     Spatter::ConfigurationBase *config;
 };
 
-}
-}
+} // namespace SST_Spatter
+} // namespace SST
 
-#endif
+#endif // SST_SPATTER_SPATTERGENERATOR_H
