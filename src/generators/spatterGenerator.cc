@@ -43,6 +43,7 @@ void SpatterGenerator::build(Params& params)
     targetAddr = 0;
 
     datawidth = params.find<uint32_t>("datawidth", 8);
+    cacheLine = params.find<uint64_t>("cache_line_size", 64);
 
     maxWarmupRuns = params.find<uint32_t>("warmup_runs", 1);
     remainingWarmupRuns = maxWarmupRuns;
@@ -63,8 +64,9 @@ void SpatterGenerator::build(Params& params)
         out->fatal(CALL_INFO, -1, "Error: failed to parse provided arguments.\n");
     }
 
-    startSource = params.find<uint32_t>("start_source", 0);
-    startTarget = params.find<uint32_t>("start_target", std::max(cl.sparse_size, cl.sparse_gather_size));
+    startSource = alignAddress(cacheLine, params.find<uint64_t>("start_source", 0));
+    startTarget = alignAddress(cacheLine, params.find<uint64_t>("start_target",
+        std::max(cl.sparse_size, cl.sparse_gather_size)));
 
     if (startTarget > startSource) {
         if (startTarget <= (startSource + std::max(cl.sparse_size, cl.sparse_gather_size) - 1)) {
@@ -310,6 +312,18 @@ bool SpatterGenerator::initConfigs(const std::string& args)
     delete [] argv;
 
     return (0 == result);
+}
+
+/**
+   * @brief Aligns an unaligned address to the next cache line.
+   *
+   * @param cacheLineSize Size of the cache line used to align the address.
+   * @param address Address to be cache line aligned.
+   * @return Address aligned to the next cache line if address was unaligned.
+   *         Otherwise, returns the address as provided if already aligned.
+   */
+uint64_t SpatterGenerator::alignAddress(const uint64_t cacheLineSize, const uint64_t address) {
+    return (address + cacheLineSize - 1) / cacheLineSize * cacheLineSize;
 }
 
 /**
