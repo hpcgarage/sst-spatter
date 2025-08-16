@@ -367,7 +367,7 @@ void SpatterGenerator::updateIndices()
 void SpatterGenerator::gather()
 {
     sourceAddr = startSource + config->pattern[patternIdx] + config->delta * countIdx;
-    targetAddr = startTarget + config->pattern.size() * (countIdx % config->wrap);
+    targetAddr = startTarget + patternIdx + config->pattern.size() * (countIdx % config->wrap);
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
     MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
@@ -389,7 +389,7 @@ void SpatterGenerator::gather()
    */
 void SpatterGenerator::scatter()
 {
-    sourceAddr = startTarget + config->pattern.size() * (countIdx % config->wrap);
+    sourceAddr = startTarget + patternIdx + config->pattern.size() * (countIdx % config->wrap);
     targetAddr = startSource + config->pattern[patternIdx] + config->delta * countIdx;
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
@@ -436,7 +436,7 @@ void SpatterGenerator::gatherScatter()
 void SpatterGenerator::multiGather()
 {
     sourceAddr = startSource + config->pattern[config->pattern_gather[patternIdx]] + config->delta_gather * countIdx;
-    targetAddr = startTarget + config->pattern_gather.size() * (countIdx % config->wrap);
+    targetAddr = startTarget + patternIdx + config->pattern_gather.size() * (countIdx % config->wrap);
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
     MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
@@ -458,7 +458,7 @@ void SpatterGenerator::multiGather()
    */
 void SpatterGenerator::multiScatter()
 {
-    sourceAddr = startTarget + config->pattern_scatter.size() * (countIdx % config->wrap);
+    sourceAddr = startTarget + patternIdx + config->pattern_scatter.size() * (countIdx % config->wrap);
     targetAddr = startSource + config->pattern[config->pattern_scatter[patternIdx]] + config->delta_scatter * countIdx;
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
