@@ -43,6 +43,8 @@ void SpatterGenerator::build(Params& params)
     targetAddr = 0;
 
     datawidth = params.find<uint32_t>("datawidth", 8);
+    cacheLine = params.find<uint64_t>("cache_line_size", 64);
+    alignAddresses = params.find<bool>("align_start_addresses", true);
 
     maxWarmupRuns = params.find<uint32_t>("warmup_runs", 1);
     remainingWarmupRuns = maxWarmupRuns;
@@ -63,8 +65,14 @@ void SpatterGenerator::build(Params& params)
         out->fatal(CALL_INFO, -1, "Error: failed to parse provided arguments.\n");
     }
 
-    startSource = params.find<uint32_t>("start_source", 0);
-    startTarget = params.find<uint32_t>("start_target", std::max(cl.sparse_size, cl.sparse_gather_size));
+    startSource = params.find<uint64_t>("start_source", 0);
+    startTarget = params.find<uint64_t>("start_target",
+        std::max(cl.sparse_size, cl.sparse_gather_size));
+
+    if (alignAddresses) {
+        startSource = alignAddress(cacheLine, startSource);
+        startTarget = alignAddress(cacheLine, startTarget);
+    }
 
     if (startTarget > startSource) {
         if (startTarget <= (startSource + std::max(cl.sparse_size, cl.sparse_gather_size) - 1)) {
@@ -313,6 +321,18 @@ bool SpatterGenerator::initConfigs(const std::string& args)
 }
 
 /**
+   * @brief Aligns an unaligned address to the next cache line.
+   *
+   * @param cacheLineSize Size of the cache line used to align the address.
+   * @param address Address to be cache line aligned.
+   * @return Address aligned to the next cache line if address was unaligned.
+   *         Otherwise, returns the address as provided if already aligned.
+   */
+uint64_t SpatterGenerator::alignAddress(const uint64_t cacheLineSize, const uint64_t address) {
+    return (address + cacheLineSize - 1) & ~(cacheLineSize - 1);
+}
+
+/**
    * @brief Return the number of elements in the pattern.
    *
    * @param config Run-configuration used to determine the kernel type.
@@ -367,7 +387,7 @@ void SpatterGenerator::updateIndices()
 void SpatterGenerator::gather()
 {
     sourceAddr = startSource + config->pattern[patternIdx] + config->delta * countIdx;
-    targetAddr = startTarget + config->pattern.size() * (countIdx % config->wrap);
+    targetAddr = startTarget + patternIdx + config->pattern.size() * (countIdx % config->wrap);
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
     MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
@@ -389,7 +409,7 @@ void SpatterGenerator::gather()
    */
 void SpatterGenerator::scatter()
 {
-    sourceAddr = startTarget + config->pattern.size() * (countIdx % config->wrap);
+    sourceAddr = startTarget + patternIdx + config->pattern.size() * (countIdx % config->wrap);
     targetAddr = startSource + config->pattern[patternIdx] + config->delta * countIdx;
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
@@ -436,7 +456,7 @@ void SpatterGenerator::gatherScatter()
 void SpatterGenerator::multiGather()
 {
     sourceAddr = startSource + config->pattern[config->pattern_gather[patternIdx]] + config->delta_gather * countIdx;
-    targetAddr = startTarget + config->pattern_gather.size() * (countIdx % config->wrap);
+    targetAddr = startTarget + patternIdx + config->pattern_gather.size() * (countIdx % config->wrap);
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
     MemoryOpRequest* writeReq = new MemoryOpRequest(targetAddr, datawidth, WRITE);
@@ -458,7 +478,7 @@ void SpatterGenerator::multiGather()
    */
 void SpatterGenerator::multiScatter()
 {
-    sourceAddr = startTarget + config->pattern_scatter.size() * (countIdx % config->wrap);
+    sourceAddr = startTarget + patternIdx + config->pattern_scatter.size() * (countIdx % config->wrap);
     targetAddr = startSource + config->pattern[config->pattern_scatter[patternIdx]] + config->delta_scatter * countIdx;
 
     MemoryOpRequest* readReq  = new MemoryOpRequest(sourceAddr, datawidth, READ);
