@@ -49,17 +49,18 @@ public:
     )
 
     SST_ELI_DOCUMENT_PARAMS(
-        { "verbose",            "Sets the verbosity of the output", "0" },
-        { "args",               "Sets the arguments to describe Spatter pattern(s)", "" },
-        { "datawidth",          "Sets the width of the memory operation", "8" },
-        { "cache_line_size",    "Size of the cache line the prefetcher is attached to", "64" },
-        { "start_source",       "Sets the start address of the source array", "0" },
-        { "start_target",       "Sets the start address of the target array", "0" },
-        { "warmup_runs",        "Sets the the number of warm-up runs", "1" }
+        { "verbose",                "Verbosity of the output", "0" },
+        { "args",                   "Arguments to describe Spatter pattern(s)", "" },
+        { "datawidth",              "Width of the memory operation", "8" },
+        { "start_source",           "Start address of the source array", "0" },
+        { "start_target",           "Start address of the target array", "0" },
+        { "cache_line_size",        "Size of the cache line the prefetcher is attached to", "64" },
+        { "align_start_addresses"   "Align start addresses to cache lines" "1"},
+        { "warmup_runs",            "Number of warm-up runs", "1" }
     )
 
     SST_ELI_DOCUMENT_STATISTICS(
-        { "config_time",         "Time spent completing all requests for a Spatter config", "ps", 1 }
+        { "config_time",            "Time spent completing all requests for a Spatter config", "ps", 1 }
     )
 
 private:
@@ -98,6 +99,7 @@ private:
     size_t configIdx;
 
     bool configFin;
+    bool alignAddresses;
 
     SimTime_t configStartTime;
 

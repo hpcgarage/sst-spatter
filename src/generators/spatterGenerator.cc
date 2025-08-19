@@ -44,6 +44,7 @@ void SpatterGenerator::build(Params& params)
 
     datawidth = params.find<uint32_t>("datawidth", 8);
     cacheLine = params.find<uint64_t>("cache_line_size", 64);
+    alignAddresses = params.find<bool>("align_start_addresses", true);
 
     maxWarmupRuns = params.find<uint32_t>("warmup_runs", 1);
     remainingWarmupRuns = maxWarmupRuns;
@@ -64,9 +65,14 @@ void SpatterGenerator::build(Params& params)
         out->fatal(CALL_INFO, -1, "Error: failed to parse provided arguments.\n");
     }
 
-    startSource = alignAddress(cacheLine, params.find<uint64_t>("start_source", 0));
-    startTarget = alignAddress(cacheLine, params.find<uint64_t>("start_target",
-        std::max(cl.sparse_size, cl.sparse_gather_size)));
+    startSource = params.find<uint64_t>("start_source", 0);
+    startTarget = params.find<uint64_t>("start_target",
+        std::max(cl.sparse_size, cl.sparse_gather_size));
+
+    if (alignAddresses) {
+        startSource = alignAddress(cacheLine, startSource);
+        startTarget = alignAddress(cacheLine, startTarget);
+    }
 
     if (startTarget > startSource) {
         if (startTarget <= (startSource + std::max(cl.sparse_size, cl.sparse_gather_size) - 1)) {
@@ -323,7 +329,6 @@ bool SpatterGenerator::initConfigs(const std::string& args)
    *         Otherwise, returns the address as provided if already aligned.
    */
 uint64_t SpatterGenerator::alignAddress(const uint64_t cacheLineSize, const uint64_t address) {
-    // Use bitwise operation for power-of-2 cacheLineSize to avoid overflow
     return (address + cacheLineSize - 1) & ~(cacheLineSize - 1);
 }
 
