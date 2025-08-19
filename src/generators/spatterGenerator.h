@@ -55,7 +55,7 @@ public:
         { "start_source",           "Start address of the source array", "0" },
         { "start_target",           "Start address of the target array", "0" },
         { "cache_line_size",        "Size of the cache line the prefetcher is attached to", "64" },
-        { "align_start_addresses"   "Align start addresses to cache lines" "1"},
+        { "align_start_addresses", "Align start addresses to cache lines", "1"},
         { "warmup_runs",            "Number of warm-up runs", "1" }
     )
 
